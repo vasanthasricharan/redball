@@ -3,8 +3,8 @@ const obstacle = document.querySelector('.obstacle');
 const scoreDisplay = document.getElementById('score');
 const highestScoreDisplay = document.getElementById('Highest-score');
 
-const jumpSound = new Audio('../Audios/jump-up-245782.mp3');
-const gameOverSound = new Audio('../Audios/game-over-6435.mp3');
+const jumpSound = new Audio('jump-up-245782.mp3');
+const gameOverSound = new Audio('game-over-6435.mp3');
 
 let isJumping = false;
 let score = 0;
