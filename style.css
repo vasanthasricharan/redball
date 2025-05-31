@@ -1,174 +1,157 @@
 body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    font-family: Arial, sans-serif;
-    background-image: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1920&q=80');
-    /* Day image */
-    background-size: cover;
-    background-position: center;
-    animation: backgroundFade 16s ease-in-out infinite;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  background-image: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1920&q=80'); /* Day image */
+  background-size: cover;
+  background-position: center;
+  animation: backgroundFade 16s ease-in-out infinite;
 }
 
 /* Fade between day and night */
 @keyframes backgroundFade {
-
-    0%,
-    40% {
-        background-image: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1920&q=80');
-        /* Day */
-    }
-
-    50%,
-    90% {
-        background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=1920&q=80');
-        /* Night */
-    }
-
-    100% {
-        background-image: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1920&q=80');
-        /* Back to Day */
-    }
+  0%, 40% {
+    background-image: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1920&q=80'); /* Day */
+  }
+  50%, 90% {
+    background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=1920&q=80'); /* Night */
+  }
+  100% {
+    background-image: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1920&q=80'); /* Back to Day */
+  }
 }
-
 /* Background layers - full screen fixed */
-#bg-day,
-#bg-night {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: -2;
-    transition: opacity 3s ease-in-out;
+#bg-day, #bg-night {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -2;
+  transition: opacity 3s ease-in-out;
 }
 
 /* Day background */
 #bg-day {
-    background-image: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1920&q=80');
-    opacity: 1;
+  background-image: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1920&q=80');
+  opacity: 1;
 }
 
 /* Night background */
 #bg-night {
-    background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=1920&q=80');
-    opacity: 0;
+  background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=1920&q=80');
+  opacity: 0;
 }
 
 /* The fading animation */
 @keyframes fadeDayNight {
-
-    0%,
-    45% {
-        opacity: 1;
-    }
-
-    55%,
-    100% {
-        opacity: 0;
-    }
+  0%, 45% {
+    opacity: 1;
+  }
+  55%, 100% {
+    opacity: 0;
+  }
 }
 
 
 #game-container {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
 #land {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 100px;
-    background: linear-gradient(to top, #8B4513 60%, #228B22 90%);
-    border-top: 3px solid #145214;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px; /* This is the height of the ground */
+  background: linear-gradient(to top, #8B4513 60%, #228B22 90%);
+  border-top: 3px solid #145214;
 }
 
+
 #character {
-    position: absolute;
-    bottom: 100px;
-    left: 50px;
-    width: 70px;
-    height: 70px;
-    background-color: red;
-    border-radius: 100%;
-    animation: run 0.3s steps(2) infinite;
+  position: absolute;
+  bottom: 100px;
+  left: 50px;
+  width: 70px;
+  height: 70px;
+  background-color: red;
+  border-radius: 100%;
+  animation: run 0.3s steps(2) infinite;
 }
 
 .obstacle {
-    position: absolute;
-    bottom: 100px;
-    right: -50px;
-    width: 50px;
-    height: 60px;
-    background-color: #8B0000;
-    border-radius: 5px;
+  position: absolute;
+  bottom: 100px;
+  right: -50px;
+  width: 50px;
+  height: 60px;
+  background-color: #8B0000;
+  border-radius: 5px;
 }
 
 #score {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    font-size: 24px;
-    color: white;
-    text-shadow: 2px 2px 4px #000;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+  color: white;
+  text-shadow: 2px 2px 4px #000;
 }
 
 #Highest-score {
-    position: absolute;
-    top: 45px;
-    left: 10px;
-    font-size: 24px;
-    color: white;
-    text-shadow: 2px 2px 4px #000;
+  position: absolute;
+  top: 45px;
+  left: 10px;
+  font-size: 24px;
+  color: white;
+  text-shadow: 2px 2px 4px #000;
 }
 
 #mute-button {
-    top: 45px;
-    color: black;
-    position: absolute;
-    left: 95%;
-    background-color: transparent;
+  top: 45px;
+  color: black;
+  position: absolute;
+  left: 95%;
+  background-color: transparent;
 }
 
 /* Page Up Button */
 #page-up-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #222;
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
-    cursor: pointer;
-    z-index: 1001;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #222;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1001;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
 
 /* Responsive styles */
 @media (max-width: 768px) {
-    #character {
-        width: 50px;
-        height: 50px;
-    }
+  #character {
+    width: 50px;
+    height: 50px;
+  }
 
-    .obstacle {
-        width: 30px;
-        height: 40px;
-        position: absolute;
-        bottom: 20px;
-    }
+  .obstacle {
+    width: 30px;
+    height: 10px;
+  }
 
-    #score,
-    #Highest-score {
-        font-size: 18px;
-    }
+  #score,
+  #Highest-score {
+    font-size: 18px;
+  }
 }
