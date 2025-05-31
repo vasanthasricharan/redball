@@ -25,11 +25,6 @@ function toggleMute() {
   console.log(`Sound ${isMuted ? 'muted' : 'unmuted'}`);
 }
 
-const land = document.getElementById('land');
-const landHeight = land.offsetHeight; // This gives you 100px
-
-
-
 document.addEventListener('keyup', (event) => {
   if ((event.key === ' ' || event.key === 'ArrowUp') && !isJumping && !isPaused) {
     jump();
