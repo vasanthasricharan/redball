@@ -162,7 +162,9 @@ body {
 
     .obstacle {
         width: 30px;
-        height: 20px;
+        height: 40px;
+        position: absolute;
+        bottom: 20px;
     }
 
     #score,
